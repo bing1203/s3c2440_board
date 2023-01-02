@@ -1,0 +1,310 @@
+#ifndef _S3C2440_SOC_H
+#define _S3C2440_SOC_H
+
+typedef volatile unsigned char  __REG_8;
+typedef volatile unsigned short __REG_16;
+typedef volatile unsigned int   __REG_32;
+
+typedef struct
+{
+	__REG_32 BWSCON;
+	__REG_32 BANKCONn[8];
+	__REG_32 REFRESH;
+	__REG_32 BANKSIZE;
+	__REG_32 MRSRB6;
+	__REG_32 MRSRB7;
+} S3C2440_MEM_CTL_t; /* 内存控制器 */
+
+typedef struct
+{
+	__REG_32 HcRevision;
+	__REG_32 HcControl;
+	__REG_32 HcCommonStatus;
+	__REG_32 HcInterruptStatus;
+	__REG_32 HcInterruptEnable;
+	__REG_32 HcInterruptDisable;
+	__REG_32 HcHCCA;
+	__REG_32 HcPeriodCuttentED;
+	__REG_32 HcControlHeadED;
+	__REG_32 HcControlCurrentED;
+	__REG_32 HcBulkHeadED;
+	__REG_32 HcBulkCurrentED;
+	__REG_32 HcDoneHead;
+	__REG_32 HcRmInterval;
+	__REG_32 HcFmRemaining;
+	__REG_32 HcFmNumber;
+	__REG_32 HcPeriodicStart;
+	__REG_32 HcLSThreshold;
+	__REG_32 HcRhDescriptorA;
+	__REG_32 HcRhDescriptorB;
+	__REG_32 HcRhStatus;
+	__REG_32 HcRhPortStatus1;
+	__REG_32 HcRhPortStatus2;
+} S3C2440_USB_HOST_CTL_t; /* USB HOST控制器 */
+
+typedef struct
+{
+	__REG_32 SRCPND;
+	__REG_32 INTMOD;
+	__REG_32 INTMSK;
+	__REG_32 PRIORITY;
+	__REG_32 INTPND;
+	__REG_32 INTOFFSET;
+	__REG_32 SUBSRCPND;
+	__REG_32 INTSUBMSK;
+} S3C2440_INTERRUPT_CTL_t; /* 中断控制器 */
+
+typedef struct
+{
+	__REG_32 DISRC0;
+	__REG_32 DISRCC0;
+	__REG_32 DIDST0;
+	__REG_32 DIDSTC0;
+	__REG_32 DCON0;
+	__REG_32 DSTAT0;
+	__REG_32 DCSRC0;
+	__REG_32 DCDST0;
+	__REG_32 DMASKTRIG0;
+
+	__REG_32 DISRC1;
+	__REG_32 DISRCC1;
+	__REG_32 DIDST1;
+	__REG_32 DIDSTC1;
+	__REG_32 DCON1;
+	__REG_32 DSTAT1;
+	__REG_32 DCSRC1;
+	__REG_32 DCDST1;
+	__REG_32 DMASKTRIG1;
+
+	__REG_32 DISRC2;
+	__REG_32 DISRCC2;
+	__REG_32 DIDST2;
+	__REG_32 DIDSTC2;
+	__REG_32 DCON2;
+	__REG_32 DSTAT2;
+	__REG_32 DCSRC2;
+	__REG_32 DCDST2;
+	__REG_32 DMASKTRIG2;
+
+	__REG_32 DISRC3;
+	__REG_32 DISRCC3;
+	__REG_32 DIDST3;
+	__REG_32 DIDSTC3;
+	__REG_32 DCON3;
+	__REG_32 DSTAT3;
+	__REG_32 DCSRC3;
+	__REG_32 DCDST3;
+	__REG_32 DMASKTRIG3;
+} S3C2440_DMA_CTL_t; /* DMA控制器 */
+
+typedef struct
+{
+	__REG_32 LOCKTIME;
+	__REG_32 MPLLCON;
+	__REG_32 UPLLCON;
+	__REG_32 CLKCON;
+	__REG_32 CLKSLOW;
+	__REG_32 CLKDIVN;
+	__REG_32 CAMDIVN;
+} S3C2330_CLOCK_POWER_CTL_t; /* 时钟和电源管理 */
+
+typedef struct
+{
+	__REG_32 LCDCON1;
+	__REG_32 LCDCON2;
+	__REG_32 LCDCON3;
+	__REG_32 LCDCON4;
+	__REG_32 LCDCON5;
+	__REG_32 LCDSADDR1;
+	__REG_32 LCDSADDR2;
+	__REG_32 LCDSADDR3;
+	__REG_32 REDLUT;
+	__REG_32 GREENLUT;
+	__REG_32 BLUELUT;
+	__REG_32 DITHMODE;
+	__REG_32 TPAL;
+	__REG_32 LCDINTPND;
+	__REG_32 LCDSRCPND;
+	__REG_32 LCDINTMSK;
+	__REG_32 TCONSEL;
+} S3C2440_LCD_CTL_t; /* LCD控制器 */
+
+typedef struct
+{
+	__REG_32 NFCONF;
+	__REG_32 NFCONT;
+	__REG_8  NFCMMD;
+	__REG_8  RES0[3];
+
+	__REG_8  NFADDR;
+	__REG_8  RES1[3];
+
+	__REG_8  NFDATA;
+	__REG_8  RES2[3];
+	
+	__REG_32 NFMECCD0;
+	__REG_32 NFMECCD1;
+	__REG_32 NFSECCD;
+	__REG_32 NFSTAT;
+	__REG_32 NFESTAT0;
+	__REG_32 NFESTAT1;
+	__REG_32 NFMECC0;
+	__REG_32 NFMECC1;
+	__REG_32 NFSECC;
+	__REG_32 NFSBLK;
+	__REG_32 NFEBLK;
+} S3C2440_NAND_CTL_t; /* NAND控制器 */
+
+typedef struct
+{
+	__REG_32 CISRCFMT;
+	__REG_32 CIWDOFST;
+	__REG_32 CIGCTRL;
+	__REG_32 CICOYSA1;
+	__REG_32 CICOYSA2;
+	__REG_32 CICOYSA3;
+	__REG_32 CICOYSA4;
+	__REG_32 CICOCBSA1;
+	__REG_32 CICOCBSA2;
+	__REG_32 CICOCBSA3;
+	__REG_32 CICOCBSA4;
+	__REG_32 CICOCRSA1;
+	__REG_32 CICOCRSA2;
+	__REG_32 CICOCRSA3;
+	__REG_32 CICOCRSA4;
+	__REG_32 CICOTRGFMT;
+	__REG_32 CICOCTRL;
+	__REG_32 CICOSCPRERATIO;
+	__REG_32 CICOSCPREDST;
+	__REG_32 CICOSCCTRL;
+	__REG_32 CICOTAREA;
+	__REG_32 CICOSTATUS;
+	__REG_32 CIPRCLRSA1;
+	__REG_32 CIPRCLRSA2;
+	__REG_32 CIPRCLRSA3;
+	__REG_32 CIPRCLRSA4;
+	__REG_32 CIPRTRGFMT;
+	__REG_32 CIPRCTRL;
+	__REG_32 CIPRSCPRERATIO;
+	__REG_32 CIPRSCPREDST;
+	__REG_32 CIPRSCCTRL;
+	__REG_32 CIPRTAREA;
+	__REG_32 CIPRSTATUS;
+	__REG_32 CIIMGCPT;
+} S3C2440_CAMERA_CTL_t;
+
+typedef struct
+{
+	__REG_32 ULCON;
+	__REG_32 UCON;
+	__REG_32 UFCON;
+	__REG_32 UMCON;
+	__REG_32 UTRSTAT0;
+	__REG_32 UERSTAT0;
+	__REG_32 UFSTAT0;
+	__REG_32 UMSTAT0;
+#if defined(__S3C2440_BIG_MODE)
+	__REG_8  RES0[3];
+	__REG_8  UTXH;
+	__REG_8  RES1[3];
+	__REG_8  URXH;
+#else
+	__REG_8  UTXH;
+	__REG_8  RES0[3];
+	__REG_8  URXH;
+	__REG_8  RES1[3];
+#endif
+	__REG_32 UBRDIV;
+} S3C2440_UART_CTL_t;
+
+typedef struct
+{
+	__REG_32 TCFG0;  // 0x51000000 ‹ W R/W Timer configuration
+	__REG_32 TCFG1;  // 0x51000004 Timer configuration
+	__REG_32 TCON;   // 0x51000008 Timer control
+	__REG_32 TCNTB0; // 0x5100000C Timer count buffer 0
+	__REG_32 TCMPB0; // 0x51000010 Timer compare buffer 0
+	__REG_32 TCNTO0; // 0x51000014 R Timer count observation 0
+	__REG_32 TCNTB1; // 0x51000018 R/W Timer count buffer 1
+	__REG_32 TCMPB1; // 0x5100001C Timer compare buffer 1
+	__REG_32 TCNTO1; // 0x51000020 R Timer count observation 1
+	__REG_32 TCNTB2; // 0x51000024 R/W Timer count buffer 2
+	__REG_32 TCMPB2; // 0x51000028 Timer compare buffer 2
+	__REG_32 TCNTO2; // 0x5100002C R Timer count observation 2
+	__REG_32 TCNTB3; // 0x51000030 R/W Timer count buffer 3
+	__REG_32 TCMPB3; // 0x51000034 Timer compare buffer 3
+	__REG_32 TCNTO3; // 0x51000038 R Timer count observation 3
+	__REG_32 TCNTB4; // 0x5100003C R/W Timer count buffer 4
+	__REG_32 TCNTO4; // 0x51000040 R Timer count observation 4
+} S3C2440_TIMER_CTL_t;
+
+typedef struct
+{
+	__REG_32 WTCON;
+	__REG_32 WTDAT;
+	__REG_32 WTCNT;
+
+} S3C2440_WATCHDOG_CTL_t;
+
+typedef struct
+{
+	__REG_32 IICCON;  // 0x54000000 ‹ W R/W IIC control
+	__REG_32 IICSTAT; // 0x54000004 IIC status
+	__REG_32 IICADD;  // 0x54000008 IIC address
+	__REG_32 IICDS;   // 0x5400000C IIC data shift
+	__REG_32 IICLC;   // 0x54000010 IIC multi-master line control
+} S3C2440_IIC_CTL_t;
+
+typedef struct
+{
+	__REG_32 IISCON;  // 0x55000000,02 0x55000000 HW,W R/W IIS control
+	__REG_32 IISMOD;  // 0x55000004,06 0x55000004 IIS mode
+	__REG_32 IISPSR;  // 0x55000008,0A 0x55000008 IIS prescaler
+	__REG_32 IISFCON; // 0x5500000C,0E 0x5500000C IIS FIFO control
+	__REG_32 IISFIFO; // 0x55000012 0x55000010 HW IIS FIFO entry
+} S3C2440_IIS_CTL_t;
+
+typedef struct
+{
+	__REG_32 GPACON;
+	__REG_32 GPADAT;
+	__REG_32 RES0[2];
+	__REG_32 GPBCON;
+	__REG_32 GPBDAT;
+	__REG_32 GPBUP;
+	__REG_32 RES1;
+	__REG_32 GPCCON;
+	__REG_32 GPCDAT;
+	__REG_32 GPCUP;
+	__REG_32 RES2;
+	__REG_32 GPDCON;
+	__REG_32 GPDDAT;
+	__REG_32 GPDUP;
+	__REG_32 RES3;
+	__REG_32 GPECON;
+	__REG_32 GPEDAT;
+	__REG_32 GPEUP;
+	__REG_32 RES4;
+	__REG_32 GPFCON;
+	__REG_32 GPFDAT;
+	__REG_32 GPFUP;
+	__REG_32 RES5;
+	__REG_32 GPGCON;
+	__REG_32 GPGDAT;
+	__REG_32 GPGUP;
+	__REG_32 RES6;
+	__REG_32 GPHCON;
+	__REG_32 GPHDAT;
+	__REG_32 GPHUP;
+	__REG_32 RES7;
+	__REG_32 GPJCON;
+	__REG_32 GPJDAT;
+	__REG_32 GPJUP;
+	__REG_32 RES8;
+} S3C2440_GPIO_CTL_t;
+
+
+
+
+
+#endif
